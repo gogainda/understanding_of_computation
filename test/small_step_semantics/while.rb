@@ -1,4 +1,4 @@
-Dir[File.join(File.dirname(__FILE__), '..', 'simple_ast', '*.rb')].each {|file| require file }
+Dir[File.join(File.dirname(__FILE__), '..', 'small_step_semantics', '*.rb')].each {|file| require file }
 require "minitest/autorun"
 
 class TestWhile < Minitest::Test
