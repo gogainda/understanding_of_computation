@@ -67,4 +67,17 @@ class TestSyntax < Minitest::Test
     assert_equal true, pattern.matches?('b')
     assert_equal false, pattern.matches?('c')
   end
+
+  def test_regualr_expressiong_repeat
+    pattern = Repeat.new(
+        Literal.new('a')
+    )
+
+    assert_equal '/a*/', pattern.inspect
+    assert_equal true, pattern.matches?('')
+    assert_equal true, pattern.matches?('a')
+    assert_equal true, pattern.matches?('aa')
+    assert_equal true, pattern.matches?('aaaa')
+    assert_equal false, pattern.matches?('b')
+  end
 end
