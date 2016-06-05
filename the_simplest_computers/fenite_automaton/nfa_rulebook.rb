@@ -16,6 +16,7 @@ class NFARulebook < Struct.new(:rules)
   def follow_free_moves(states)
     following_states = next_states(states, nil)
 
+
     if following_states.subset?(states)
       states
     else
